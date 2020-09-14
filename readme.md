@@ -8,7 +8,7 @@
 brew install python
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
-# make sure this python version is no osx inbuilt and the one installed by brew
+# make sure this python version is not osx default and the one installed by brew
 python get-pip.py
 pip install -r requirements.txt
 
