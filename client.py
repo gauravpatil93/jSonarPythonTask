@@ -3,7 +3,7 @@ from pprint import pprint
 
 BASE = "http://0.0.0.0:5000"
 
-
+"""
 # Displays a list of customers
 response = requests.get(BASE + "/customers")
 if response.status_code == 200:
@@ -35,6 +35,7 @@ if response.status_code == 200:
 else:
     print(response.status_code)
     print(response.content)
+"""
 
 # Retrieves a movie with a specific name or id
 response = requests.post(BASE + "/films", json={"title": "ACE GOLDFINGER"})

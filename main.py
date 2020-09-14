@@ -167,18 +167,18 @@ class Films(Resource):
                     film_dict[film["_id"]] = [film]
 
             fs = []
-            for key, films in film_dict.items():
+            for key, flms in film_dict.items():
                 fs.append({
-                    "Category": films[0]["Category"],
-                    "Description": films[0]["Description"],
-                    "Length": films[0]["Length"],
-                    "Rating": films[0]["Rating"],
-                    "Rental Duration": films[0]["Rental Duration"],
-                    "Replacement Cost": films[0]["Replacement Cost"],
-                    "Special Features": films[0]["Special Features"],
-                    "Title": films[0]["Title"],
-                    "Actors": films[0]["Actors"],
-                    "_id": films[0]["_id"],
+                    "Category": flms[0]["Category"],
+                    "Description": flms[0]["Description"],
+                    "Length": flms[0]["Length"],
+                    "Rating": flms[0]["Rating"],
+                    "Rental Duration": flms[0]["Rental Duration"],
+                    "Replacement Cost": flms[0]["Replacement Cost"],
+                    "Special Features": flms[0]["Special Features"],
+                    "Title": flms[0]["Title"],
+                    "Actors": flms[0]["Actors"],
+                    "_id": flms[0]["_id"],
                     "Customers": [{
                         'Address': f["customer"]['Address'],
                         'City': f["customer"]['City'],
@@ -187,9 +187,10 @@ class Films(Resource):
                         'First Name': f["customer"]['First Name'],
                         'Last Name': f["customer"]['Last Name'],
                         'Phone': f["customer"]['Phone'],
-                    } for f in films if f["customer"]]
+                    } for f in flms if f["customer"]]
                 })
-                return fs
+
+            return fs
         else:
             return make_response("Film with title matching " + str(film_title) + " does not exist", 404)
 
