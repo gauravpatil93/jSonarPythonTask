@@ -51,6 +51,6 @@ customers
 
 # Additionally I could have also used fuzzy matching to get 
 # most relevant movies given a movie title
-/films Post data: {'title', 'Spiderman'}
+/films with post data: {'title', 'Spiderman'}
 
 ```
